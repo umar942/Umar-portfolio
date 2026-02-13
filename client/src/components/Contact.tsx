@@ -14,7 +14,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { insertMessageSchema } from "@shared/schema";
+import { insertMessageSchema } from "@/lib/contact-schema";
 import { useContactForm } from "@/hooks/use-contact";
 
 const formSchema = insertMessageSchema.extend({

@@ -6,10 +6,4 @@ export const insertMessageSchema = z.object({
   message: z.string().trim().min(1, "Message is required"),
 });
 
-export const messageSchema = insertMessageSchema.extend({
-  id: z.number().int().positive(),
-  createdAt: z.string().datetime(),
-});
-
 export type InsertMessage = z.infer<typeof insertMessageSchema>;
-export type Message = z.infer<typeof messageSchema>;
