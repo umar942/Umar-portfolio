@@ -52,21 +52,39 @@ export function Hero() {
             </Button>
           </div>
 
-          <div className="flex items-center gap-6 mt-12">
-            <a href="https://github.com/umar942" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-              <Github className="w-6 h-6" />
-            </a>
-            <a href="https://www.linkedin.com/in/umar-ali-6501a2353" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-              <Linkedin className="w-6 h-6" />
-            </a>
-            <a href="/resume.pdf.pdf" download="Umar_Resume.pdf">
-              <span className="inline-flex items-center gap-2">
-                <Download className="w-5 h-5" />
+          <div className="flex flex-col items-start gap-4 mt-12 sm:flex-row sm:items-center sm:gap-6">
+            <div className="flex items-center gap-4">
+              <a
+                href="https://github.com/umar942"
+                target="_blank"
+                rel="noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
+                <Github className="w-6 h-6" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/umar-ali-6501a2353"
+                target="_blank"
+                rel="noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
+                <Linkedin className="w-6 h-6" />
+              </a>
+              <a
+                href="/resume.pdf.pdf"
+                download="Umar_Resume.pdf"
+                className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+              >
+                <Download className="w-4 h-4" />
                 <span>Download Resume</span>
+              </a>
+            </div>
+            <div className="flex items-center gap-4">
+              <div className="h-px w-16 bg-border" />
+              <span className="hidden text-sm text-muted-foreground font-mono sm:inline-flex">
+                Based in Pakistan
               </span>
-            </a>
-            <div className="h-px w-20 bg-border" />
-            <span className="text-sm text-muted-foreground font-mono">Based in Pakistan</span>
+            </div>
           </div>
         </motion.div>
 
