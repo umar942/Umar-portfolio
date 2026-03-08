@@ -7,9 +7,10 @@ export function Hero() {
     <section id="about" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background Elements */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-[100px] animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px]" />
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20" />
+        {/* Lighter background on mobile for better performance */}
+        <div className="hidden sm:block absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-[80px] animate-pulse" />
+        <div className="hidden sm:block absolute bottom-20 right-10 w-96 h-96 bg-blue-600/10 rounded-full blur-[100px]" />
+        <div className="hidden sm:block absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20" />
       </div>
 
       <div className="container relative z-10 px-6 mx-auto grid md:grid-cols-2 gap-12 items-center">
@@ -119,7 +120,7 @@ export function Hero() {
       </div>
 
       <motion.div 
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
+        className="hidden sm:block absolute bottom-10 left-1/2 -translate-x-1/2"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >
