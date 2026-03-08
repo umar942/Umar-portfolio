@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Terminal } from "lucide-react";
+import { ArrowDown, Download, Github, Linkedin, Terminal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function Hero() {
@@ -58,6 +58,12 @@ export function Hero() {
             </a>
             <a href="https://www.linkedin.com/in/umar-ali-6501a2353" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
               <Linkedin className="w-6 h-6" />
+            </a>
+            <a href="/resume.pdf.pdf" download="Umar_Resume.pdf">
+              <span className="inline-flex items-center gap-2">
+                <Download className="w-5 h-5" />
+                <span>Download Resume</span>
+              </span>
             </a>
             <div className="h-px w-20 bg-border" />
             <span className="text-sm text-muted-foreground font-mono">Based in Pakistan</span>
