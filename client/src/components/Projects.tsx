@@ -4,11 +4,23 @@ import { useGithubRepos } from "@/hooks/use-github";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 
+type Project = {
+  id: number;
+  name: string;
+  description: string;
+  html_url: string;
+  topics: string[];
+  stargazers_count: number | null;
+  language: string;
+  logo: string;
+  logoBgClass?: string;
+};
+
 export function Projects() {
   const { data: repos, isLoading, error } = useGithubRepos("umar942");
 
   // Manual projects from user provided image
-  const manualProjects = [
+  const manualProjects: Project[] = [
     {
       id: 101,
       name: "Syssel",
@@ -38,6 +50,36 @@ export function Projects() {
       stargazers_count: null,
       language: "TypeScript",
       logo: "/images/247logo.png"
+    },
+    {
+      id: 104,
+      name: "To Know Oneself",
+      description: "To Know Oneself is a doctor-supervised telehealth platform for hormone and metabolic optimization. It guides users through assessments, labs, treatment plans, and secure progress tracking.",
+      html_url: "https://www.toknowoneself.co/",
+      topics: ["Telehealth", "Healthcare", "Patient Portal"],
+      stargazers_count: null,
+      language: "TypeScript",
+      logo: "/images/logo-icon-blue.svg"
+    },
+    {
+      id: 105,
+      name: "Copy Smart",
+      description: "Copy Smart is a commercial digital printing ecommerce site for Vancouver and the Lower Mainland. It showcases products like business cards, banners, booklets, posters, and photo prints.",
+      html_url: "https://copysmart.ca/",
+      topics: ["Ecommerce", "Printing", "WordPress"],
+      stargazers_count: null,
+      language: "JavaScript",
+      logo: "/images/copy-smart-logo.png"
+    },
+    {
+      id: 106,
+      name: "Assistify Care",
+      description: "Assistify Care is an AEON Disability Services care platform for NDIS participants in Australia. It supports complex-care needs, participant communication, and accessible service coordination.",
+      html_url: "https://aeon.assistifycare.com.au/",
+      topics: ["Healthcare", "NDIS", "Care System"],
+      stargazers_count: null,
+      language: "TypeScript",
+      logo: "/images/assistify-mark.png"
     }
   ];
 
@@ -77,9 +119,9 @@ export function Projects() {
               >
                 <div className="p-6 flex flex-col flex-grow">
                   <div className="flex justify-between items-start mb-4">
-                    <div className="w-12 h-12 flex items-center justify-center bg-secondary rounded-xl group-hover:bg-primary/10 group-hover:text-primary transition-colors overflow-hidden">
+                    <div className={`w-12 h-12 flex items-center justify-center ${repo.logoBgClass || 'bg-secondary'} rounded-xl group-hover:bg-primary/10 group-hover:text-primary transition-colors overflow-hidden`}>
                       {repo.logo?.startsWith('/') ? (
-                        <img src={repo.logo} alt={repo.name} className="w-full h-full object-cover" />
+                        <img src={repo.logo} alt={repo.name} className="w-full h-full object-contain p-0.5" />
                       ) : (
                         <span className="font-bold text-lg">{repo.logo || <Github className="w-6 h-6" />}</span>
                       )}
