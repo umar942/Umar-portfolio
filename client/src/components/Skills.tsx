@@ -9,25 +9,40 @@ import {
 } from "lucide-react";
 
 const skillsData = [
-  {
-    category: "Frontend",
-    icon: <Layout className="w-6 h-6 text-blue-400" />,
-    skills: ["HTML5", "CSS3", "JavaScript", "React", "Redux", "Chakra UI", "TailwindCSS"]
-  },
+ {
+  category: "Frontend",
+  icon: <Layout className="w-6 h-6 text-blue-400" />,
+  skills: [
+    "HTML5",
+    "CSS3",
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Next.js",
+    "Redux",
+    "Tailwind CSS"
+  ]
+},
+
   {
     category: "Backend",
     icon: <Server className="w-6 h-6 text-green-400" />,
-    skills: ["NodeJS", "Express.js", "Next JS", "JWT", "Socket.io", "Bun", "Nodemon"]
+    skills: ["NodeJS", "Express.js", "Next JS", "JWT", "Socket.io", "Bun", "Nodemon","GraphQL"]
   },
+ {
+  category: "Database",
+  icon: <Database className="w-6 h-6 text-yellow-400" />,
+  skills: ["MongoDB", "DynamoDB", "MSSQL", "Firebase"]
+},
+{
+  category: "Cloud & DevOps",
+  icon: <Cloud className="w-6 h-6 text-blue-400" />,
+  skills: ["AWS", "Lambda", "S3", "API Gateway"]
+},
   {
-    category: "Database",
-    icon: <Database className="w-6 h-6 text-yellow-400" />,
-    skills: ["MongoDB", "PostgreSQL", "MSSQL", "Firebase"]
-  },
-  {
-    category: "DevOps & Hosting",
+    category: " Hosting",
     icon: <Cloud className="w-6 h-6 text-orange-400" />,
-    skills: ["AWS", "Vercel", "Render", "Netlify"]
+    skills: [ "Vercel", "Render", "Netlify"]
   },
   {
     category: "Tools & Utilities",
