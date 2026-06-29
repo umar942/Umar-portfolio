@@ -32,7 +32,7 @@ export function Hero() {
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-lg leading-relaxed">
-            A passionate <span className="text-foreground font-semibold">FLutter Developer</span> crafting robust and scalable web applications.
+            A passionate <span className="text-foreground font-semibold">Mern Stack Developer</span> crafting robust and scalable web applications.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
@@ -105,10 +105,9 @@ export function Hero() {
             <div className="font-mono text-sm leading-relaxed">
               <div className="text-pink-400">const <span className="text-blue-400">developer</span> = <span className="text-yellow-400">{"{"}</span></div>
               <div className="pl-4 text-foreground">name: <span className="text-green-400">"Umar Ali"</span>,</div>
-              <div className="pl-4 text-foreground">role: <span className="text-green-400">"Flutter Developer"</span>,</div>
+              <div className="pl-4 text-foreground">role: <span className="text-green-400">"Mern Stack Developer"</span>,</div>
               <div className="pl-4 text-foreground">skills: <span className="text-yellow-400">{"["}</span></div>
-              <div className="pl-8 text-green-400">"Flutter", "Dart", "Firebase",</div>
-              <div className="pl-8 text-green-400">"Node.js", "Next.js", "TypeScript"</div>
+              <div className="pl-8 text-green-400">"MongoDB", "Express.js", "React", "Node.js"</div>
               <div className="pl-4 text-yellow-400">{"]"}</div>
               <div className="text-yellow-400">{"}"}</div>
             </div>
