@@ -17,6 +17,7 @@ export type Project = {
   language: string;
   logo: string;
   logoBgClass?: string;
+  logoImgClass?: string;
   highlights?: string[];
   techStack?: string[];
   links: ProjectLink[];
@@ -268,6 +269,44 @@ export const projects: Project[] = [
     links: [
       { label: "Visit Website", url: "https://aeon.assistifycare.com.au/", icon: "website" },
     ],
+  },
+  {
+    id: 107,
+    slug: "erebix",
+    name: "Erebix",
+    tagline: "AI-Powered Gym & Fitness Management App",
+    description:
+      "Erebix is a cross-platform gym management app built with React Native that helps users reach their fitness goals through personalized AI-powered workout and meal plans.",
+    longDescription:
+      "Developed a cross-platform gym management application using React Native, helping users achieve their fitness goals through personalized AI-powered workout and meal plans. Built features including goal-based fitness tracking, exercise libraries, progress monitoring, nutrition planning, and user authentication. Integrated AI to generate customized workout routines and meal plans based on user goals, experience level, and preferences, delivering a seamless and responsive mobile experience.",
+    html_url: "",
+    topics: ["Fitness", "AI", "React Native"],
+    stargazers_count: null,
+    language: "TypeScript",
+    logo: "/Erebix.png",
+    logoImgClass: "scale-[2.4] translate-y-1",
+    highlights: [
+      "AI Meal Plans",
+      "AI Workout Plans",
+      "Goal Tracking",
+      "Exercise Libraries",
+      "Progress Monitoring",
+      "Nutrition Planning",
+      "User Authentication",
+      "Fitness Analytics",
+      "Cross-Platform",
+      "Modern UI",
+    ],
+    techStack: [
+      "React Native",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "AI Integration",
+      "JWT Authentication",
+      "REST APIs",
+    ],
+    links: [],
   },
 ];
 

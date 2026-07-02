@@ -20,7 +20,7 @@ export function Projects() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.slice(0, 6).map((project, idx) => (
+          {projects.slice(0, 7).map((project, idx) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 20 }}
@@ -35,7 +35,7 @@ export function Projects() {
                       <div className="flex justify-between items-start mb-4">
                         <div className={`w-12 h-12 flex items-center justify-center ${project.logoBgClass || 'bg-secondary'} rounded-xl group-hover:bg-primary/10 group-hover:text-primary transition-colors overflow-hidden`}>
                           {project.logo?.startsWith('/') ? (
-                            <img src={project.logo} alt={project.name} className="w-full h-full object-contain p-0.5" />
+                            <img src={project.logo} alt={project.name} className={`w-full h-full object-contain p-0.5 ${project.logoImgClass || ""}`} />
                           ) : (
                             <span className="font-bold text-lg">{project.logo || <Github className="w-6 h-6" />}</span>
                           )}

@@ -70,7 +70,7 @@ export default function ProjectDetail() {
             <div className="flex flex-col sm:flex-row sm:items-center gap-6 mb-8">
               <div className={`w-20 h-20 flex items-center justify-center ${project.logoBgClass || 'bg-secondary'} rounded-2xl border border-white/5 overflow-hidden shrink-0`}>
                 {project.logo?.startsWith('/') ? (
-                  <img src={project.logo} alt={project.name} className="w-full h-full object-contain p-2" />
+                  <img src={project.logo} alt={project.name} className={`w-full h-full object-contain p-2 ${project.logoImgClass || ""}`} />
                 ) : (
                   <span className="font-bold text-2xl">{project.logo || <Github className="w-8 h-8" />}</span>
                 )}

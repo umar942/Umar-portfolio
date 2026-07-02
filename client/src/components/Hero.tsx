@@ -33,7 +33,7 @@ export function Hero() {
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-lg leading-relaxed">
-            A passionate <span className="text-foreground font-semibold">Mern Stack Developer</span> crafting robust and scalable web applications.
+            A passionate <span className="text-foreground font-semibold">Full-Stack MERN Developer</span> crafting robust and scalable web applications.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
@@ -73,8 +73,8 @@ export function Hero() {
                 <Linkedin className="w-6 h-6" />
               </a>
               <a
-                href="/resume.pdf"
-                download="Umar_Resume.pdf"
+                href="/Umar-Ali-Resume.pdf"
+                download="Umar-Ali-Resume.pdf"
                 className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
               >
                 <Download className="w-4 h-4" />
@@ -107,9 +107,21 @@ export function Hero() {
               <div className="font-mono text-sm leading-relaxed">
                 <div className="text-pink-400">const <span className="text-blue-400">developer</span> = <span className="text-yellow-400">{"{"}</span></div>
                 <div className="pl-4 text-foreground">name: <span className="text-green-400">"Umar Ali"</span>,</div>
-                <div className="pl-4 text-foreground">role: <span className="text-green-400">"Mern Stack Developer"</span>,</div>
-                <div className="pl-4 text-foreground">skills: <span className="text-yellow-400">{"["}</span></div>
-                <div className="pl-8 text-green-400">"MongoDB", "Express.js", "React", "Node.js"</div>
+                <div className="pl-4 text-foreground">role: <span className="text-green-400">"Full-Stack Developer"</span>,</div>
+                <div className="pl-4 text-foreground">frontend: <span className="text-yellow-400">{"["}</span></div>
+                <div className="pl-8 text-green-400">"React.js", "Next.js", "React Native"</div>
+                <div className="pl-4 text-yellow-400">{"],"}</div>
+                <div className="pl-4 text-foreground">backend: <span className="text-yellow-400">{"["}</span></div>
+                <div className="pl-8 text-green-400">"Node.js", "Express.js", "GraphQL"</div>
+                <div className="pl-4 text-yellow-400">{"],"}</div>
+                <div className="pl-4 text-foreground">database: <span className="text-yellow-400">{"["}</span></div>
+                <div className="pl-8 text-green-400">"MongoDB", "Redis"</div>
+                <div className="pl-4 text-yellow-400">{"],"}</div>
+                <div className="pl-4 text-foreground">cloud: <span className="text-yellow-400">{"["}</span></div>
+                <div className="pl-8 text-green-400">"AWS", "Docker"</div>
+                <div className="pl-4 text-yellow-400">{"],"}</div>
+                <div className="pl-4 text-foreground">specialties: <span className="text-yellow-400">{"["}</span></div>
+                <div className="pl-8 text-green-400">"AI", "Web3", "Socket.io"</div>
                 <div className="pl-4 text-yellow-400">{"]"}</div>
                 <div className="text-yellow-400">{"}"}</div>
               </div>
