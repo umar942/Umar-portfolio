@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Github, ArrowUpRight } from "lucide-react";
 import { Link } from "wouter";
 import { projects } from "@/lib/projects-data";
+import { TiltCard } from "@/components/TiltCard";
 
 export function Projects() {
   return (
@@ -28,38 +29,40 @@ export function Projects() {
               transition={{ delay: idx * 0.1 }}
             >
               <Link href={`/projects/${project.slug}`}>
-                <div className="group flex flex-col h-full bg-card rounded-2xl border border-white/5 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 overflow-hidden cursor-pointer">
-                  <div className="p-6 flex flex-col flex-grow">
-                    <div className="flex justify-between items-start mb-4">
-                      <div className={`w-12 h-12 flex items-center justify-center ${project.logoBgClass || 'bg-secondary'} rounded-xl group-hover:bg-primary/10 group-hover:text-primary transition-colors overflow-hidden`}>
-                        {project.logo?.startsWith('/') ? (
-                          <img src={project.logo} alt={project.name} className="w-full h-full object-contain p-0.5" />
-                        ) : (
-                          <span className="font-bold text-lg">{project.logo || <Github className="w-6 h-6" />}</span>
-                        )}
+                <TiltCard maxTilt={7} scale={1.02} glare className="h-full cursor-pointer">
+                  <div className="group flex flex-col h-full bg-card rounded-2xl border border-white/5 hover:border-primary/50 transition-colors duration-300 hover:shadow-2xl hover:shadow-primary/10 overflow-hidden">
+                    <div className="p-6 flex flex-col flex-grow">
+                      <div className="flex justify-between items-start mb-4">
+                        <div className={`w-12 h-12 flex items-center justify-center ${project.logoBgClass || 'bg-secondary'} rounded-xl group-hover:bg-primary/10 group-hover:text-primary transition-colors overflow-hidden`}>
+                          {project.logo?.startsWith('/') ? (
+                            <img src={project.logo} alt={project.name} className="w-full h-full object-contain p-0.5" />
+                          ) : (
+                            <span className="font-bold text-lg">{project.logo || <Github className="w-6 h-6" />}</span>
+                          )}
+                        </div>
+                        <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                       </div>
-                      <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
-                    </div>
 
-                    <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
-                      {project.name.replace(/-/g, ' ')}
-                    </h3>
+                      <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
+                        {project.name.replace(/-/g, ' ')}
+                      </h3>
 
-                    <p className="text-muted-foreground text-sm mb-6 line-clamp-3 flex-grow">
-                      {project.description || "No description available for this project."}
-                    </p>
+                      <p className="text-muted-foreground text-sm mb-6 line-clamp-3 flex-grow">
+                        {project.description || "No description available for this project."}
+                      </p>
 
-                    <div className="space-y-4">
-                      <div className="flex flex-wrap gap-2">
-                        {project.topics?.slice(0, 2).map(topic => (
-                          <span key={topic} className="text-xs px-2 py-1 rounded-md bg-secondary text-secondary-foreground border border-white/5">
-                            {topic}
-                          </span>
-                        ))}
+                      <div className="space-y-4">
+                        <div className="flex flex-wrap gap-2">
+                          {project.topics?.slice(0, 2).map(topic => (
+                            <span key={topic} className="text-xs px-2 py-1 rounded-md bg-secondary text-secondary-foreground border border-white/5">
+                              {topic}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                </TiltCard>
               </Link>
             </motion.div>
           ))}

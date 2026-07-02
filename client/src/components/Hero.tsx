@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Download, Github, Linkedin, Terminal } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { TiltCard } from "@/components/TiltCard";
 
 export function Hero() {
   return (
@@ -72,7 +73,7 @@ export function Hero() {
                 <Linkedin className="w-6 h-6" />
               </a>
               <a
-                href="/resume.pdf.pdf"
+                href="/resume.pdf"
                 download="Umar_Resume.pdf"
                 className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
               >
@@ -95,23 +96,25 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative hidden md:block"
         >
-          <div className="relative z-10 bg-card/50 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500">
-            <div className="flex items-center gap-2 mb-4 border-b border-white/10 pb-4">
-              <div className="w-3 h-3 rounded-full bg-red-500" />
-              <div className="w-3 h-3 rounded-full bg-yellow-500" />
-              <div className="w-3 h-3 rounded-full bg-green-500" />
-              <span className="ml-2 text-xs text-muted-foreground font-mono">developer.tsx</span>
+          <TiltCard maxTilt={10} scale={1.03} glare className="z-10">
+            <div className="bg-card/50 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-2xl">
+              <div className="flex items-center gap-2 mb-4 border-b border-white/10 pb-4">
+                <div className="w-3 h-3 rounded-full bg-red-500" />
+                <div className="w-3 h-3 rounded-full bg-yellow-500" />
+                <div className="w-3 h-3 rounded-full bg-green-500" />
+                <span className="ml-2 text-xs text-muted-foreground font-mono">developer.tsx</span>
+              </div>
+              <div className="font-mono text-sm leading-relaxed">
+                <div className="text-pink-400">const <span className="text-blue-400">developer</span> = <span className="text-yellow-400">{"{"}</span></div>
+                <div className="pl-4 text-foreground">name: <span className="text-green-400">"Umar Ali"</span>,</div>
+                <div className="pl-4 text-foreground">role: <span className="text-green-400">"Mern Stack Developer"</span>,</div>
+                <div className="pl-4 text-foreground">skills: <span className="text-yellow-400">{"["}</span></div>
+                <div className="pl-8 text-green-400">"MongoDB", "Express.js", "React", "Node.js"</div>
+                <div className="pl-4 text-yellow-400">{"]"}</div>
+                <div className="text-yellow-400">{"}"}</div>
+              </div>
             </div>
-            <div className="font-mono text-sm leading-relaxed">
-              <div className="text-pink-400">const <span className="text-blue-400">developer</span> = <span className="text-yellow-400">{"{"}</span></div>
-              <div className="pl-4 text-foreground">name: <span className="text-green-400">"Umar Ali"</span>,</div>
-              <div className="pl-4 text-foreground">role: <span className="text-green-400">"Mern Stack Developer"</span>,</div>
-              <div className="pl-4 text-foreground">skills: <span className="text-yellow-400">{"["}</span></div>
-              <div className="pl-8 text-green-400">"MongoDB", "Express.js", "React", "Node.js"</div>
-              <div className="pl-4 text-yellow-400">{"]"}</div>
-              <div className="text-yellow-400">{"}"}</div>
-            </div>
-          </div>
+          </TiltCard>
           
           {/* Decorative code symbols floating behind */}
           <Terminal className="absolute -top-10 -right-10 w-24 h-24 text-primary/10 rotate-12" />
