@@ -21,12 +21,16 @@ export type Project = {
   highlights?: string[];
   techStack?: string[];
   links: ProjectLink[];
+  category: "web" | "app";
+  order?: number;
 };
 
 export const projects: Project[] = [
   {
     id: 101,
     slug: "syssel",
+    category: "app",
+    order: 1,
     name: "Syssel",
     tagline: "Local Services Marketplace",
     description:
@@ -57,6 +61,8 @@ export const projects: Project[] = [
   {
     id: 102,
     slug: "taskbound",
+    category: "web",
+    order: 2,
     name: "Taskbound",
     tagline: "Web3 Bounty & Rewards Platform",
     description:
@@ -99,6 +105,8 @@ export const projects: Project[] = [
   {
     id: 103,
     slug: "247seating",
+    category: "web",
+    order: 3,
     name: "247Seating",
     tagline: "Event Seating & Ticket Management Platform",
     description:
@@ -140,6 +148,8 @@ export const projects: Project[] = [
   {
     id: 104,
     slug: "to-know-oneself",
+    category: "web",
+    order: 1,
     name: "To Know Oneself",
     tagline: "TKO – Telehealth & Wellness Platform",
     description:
@@ -185,6 +195,8 @@ export const projects: Project[] = [
   {
     id: 105,
     slug: "copy-smart",
+    category: "web",
+    order: 4,
     name: "Copy Smart",
     tagline: "AI-Powered Content Creation Platform",
     description:
@@ -229,6 +241,8 @@ export const projects: Project[] = [
   {
     id: 106,
     slug: "assistify-care",
+    category: "web",
+    order: 5,
     name: "Assistify Care",
     tagline: "AEON – NDIS Disability Support Management Platform",
     description:
@@ -273,6 +287,8 @@ export const projects: Project[] = [
   {
     id: 107,
     slug: "erebix",
+    category: "app",
+    order: 2,
     name: "Erebix",
     tagline: "AI-Powered Gym & Fitness Management App",
     description:
@@ -307,6 +323,39 @@ export const projects: Project[] = [
       "REST APIs",
     ],
     links: [],
+  },
+  {
+    id: 108,
+    slug: "habeeye",
+    category: "app",
+    order: 3,
+    name: "Habeeye",
+    tagline: "Your Ultimate Shopping Companion",
+    description:
+      "Habeeye is a multi-service shopping super app bringing grocery, pharmacy, retail stores, restaurants, and parcel delivery together in one place, plus a built-in module for charitable giving.",
+    longDescription:
+      "Habeeye is a one-stop shopping super app built around six distinct modules: Grocery for fresh produce, pantry essentials, and household items; Pharmacy for medicines, wellness supplements, and personal care; Stores for browsing a range of vendors from electronics to fashion; Restaurants for ordering across a variety of cuisines; Parcel for on-demand door-to-door delivery; and Sadaqah Jariyah, a dedicated module for charitable donations. The app is backed by companion Driver and Merchant apps that power delivery logistics and vendor-side order/inventory management, and is live on both the Google Play Store and the Apple App Store.",
+    html_url: "https://play.google.com/store/apps/details?id=com.habeeye.user_app&hl=en",
+    topics: ["Shopping", "On-Demand Delivery", "Multi-Vendor"],
+    stargazers_count: null,
+    language: "TypeScript",
+    logo: "/images/habeeye.png",
+    highlights: [
+      "Grocery ordering — fresh produce, pantry essentials, and household items",
+      "Pharmacy module for medicines, supplements, and personal care",
+      "Multi-vendor Stores marketplace spanning electronics, fashion, and more",
+      "Restaurant ordering across a variety of cuisines",
+      "Parcel module for on-demand door-to-door delivery",
+      "Sadaqah Jariyah — in-app charitable donations module",
+      "Real-time order tracking",
+      "Companion Driver app for delivery partners",
+      "Companion Merchant app for vendor inventory and order management",
+      "Secure in-app transactions with personalized recommendations",
+    ],
+    links: [
+      { label: "Get it on Google Play", url: "https://play.google.com/store/apps/details?id=com.habeeye.user_app&hl=en", icon: "playstore" },
+      { label: "Download on the App Store", url: "https://apps.apple.com/us/app/habeeye/id6473112630", icon: "appstore" },
+    ],
   },
 ];
 
