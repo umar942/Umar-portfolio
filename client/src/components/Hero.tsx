@@ -81,12 +81,7 @@ export function Hero() {
                 <span>Download Resume</span>
               </a>
             </div>
-            <div className="flex items-center gap-4">
-              <div className="h-px w-16 bg-border" />
-              <span className="hidden text-sm text-muted-foreground font-mono sm:inline-flex">
-                Based in Pakistan
-              </span>
-            </div>
+           
           </div>
         </motion.div>
 
