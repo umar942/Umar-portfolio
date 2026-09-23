@@ -8,7 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "start": "vite preview",
-    "check": "tsc"
+    "check": "tsc",
+    "postinstall": "git config core.hooksPath .githooks || true"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

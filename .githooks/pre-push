@@ -1,0 +1,20 @@
+#!/bin/bash
+# Blocks the push if any tracked file at HEAD matches a known malware
+# signature. Runs even if a commit was made with --no-verify or amended
+# after the pre-commit hook last ran. See .githooks/malicious-scan.sh.
+
+hook_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+output="$(git ls-files -z | bash "$hook_dir/malicious-scan.sh")"
+status=$?
+
+if [ "$status" -ne 0 ]; then
+  echo ""
+  echo "PUSH BLOCKED: possible malicious code detected in tracked files:"
+  echo "$output"
+  echo ""
+  echo "Remove the flagged content, commit the fix, and try again."
+  exit 1
+fi
+
+exit 0
