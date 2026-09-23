@@ -1,0 +1,20 @@
+#!/bin/bash
+# Blocks the commit if any staged file matches a known malware signature.
+# See .githooks/malicious-scan.sh for what's checked and why.
+
+hook_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+output="$(git diff --cached -z --name-only --diff-filter=ACM | bash "$hook_dir/malicious-scan.sh")"
+status=$?
+
+if [ "$status" -ne 0 ]; then
+  echo ""
+  echo "COMMIT BLOCKED: possible malicious code detected in staged changes:"
+  echo "$output"
+  echo ""
+  echo "Remove the flagged content before committing. If this is a false"
+  echo "positive, you can bypass with 'git commit --no-verify' -- but be sure."
+  exit 1
+fi
+
+exit 0
