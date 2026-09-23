@@ -6,6 +6,40 @@
   --font-display: 'Outfit', sans-serif;
   --font-body: 'Plus Jakarta Sans', sans-serif;
 
+  /* Light Theme Palette */
+  --background: 210 40% 98%;
+  --foreground: 222 47% 11%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+
+  /* Cyan/Blue Accent */
+  --primary: 199 89% 42%;
+  --primary-foreground: 210 40% 98%;
+
+  --secondary: 214 32% 91%;
+  --secondary-foreground: 222 47% 11%;
+
+  --muted: 214 32% 91%;
+  --muted-foreground: 215 16% 40%;
+
+  --accent: 199 89% 42%;
+  --accent-foreground: 210 40% 98%;
+
+  --destructive: 0 72% 42%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 214 25% 85%;
+  --input: 214 25% 85%;
+  --ring: 199 89% 42%;
+
+  --radius: 0.75rem;
+}
+
+.dark {
   /* Dark Theme Palette */
   --background: 222 47% 11%;
   --foreground: 210 40% 98%;
@@ -35,8 +69,6 @@
   --border: 217 33% 20%;
   --input: 217 33% 17%;
   --ring: 199 89% 48%;
-
-  --radius: 0.75rem;
 }
 
 @layer base {
@@ -57,7 +89,7 @@
   }
   
   .glass-card {
-    @apply bg-card/50 backdrop-blur-xl border border-white/10 shadow-xl;
+    @apply bg-card/50 backdrop-blur-xl border border-foreground/10 shadow-xl;
   }
 }
 

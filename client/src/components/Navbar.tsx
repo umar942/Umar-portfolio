@@ -3,6 +3,7 @@ import { Link, useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,7 +49,7 @@ export function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "py-4 bg-background/80 backdrop-blur-md border-b border-white/5" : "py-6 bg-transparent"
+        scrolled ? "py-4 bg-background/80 backdrop-blur-md border-b border-foreground/5" : "py-6 bg-transparent"
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
@@ -80,15 +81,19 @@ export function Navbar() {
             <Github className="w-4 h-4 mr-2" />
             GitHub
           </Button>
+          <ThemeToggle />
         </div>
 
         {/* Mobile Toggle */}
-        <button
-          className="md:hidden text-foreground p-2"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X /> : <Menu />}
-        </button>
+        <div className="md:hidden flex items-center gap-1">
+          <ThemeToggle />
+          <button
+            className="text-foreground p-2"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X /> : <Menu />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -98,7 +103,7 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background border-b border-white/10 overflow-hidden"
+            className="md:hidden bg-background border-b border-foreground/10 overflow-hidden"
           >
             <div className="container px-6 py-8 flex flex-col gap-6">
               {navLinks.map((link) => (
@@ -111,7 +116,7 @@ export function Navbar() {
                   {link.name}
                 </button>
               ))}
-              <div className="flex gap-4 pt-4 border-t border-white/10">
+              <div className="flex gap-4 pt-4 border-t border-foreground/10">
                 <a href={githubUrl} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-secondary text-primary hover:bg-primary hover:text-background transition-colors" aria-label="GitHub profile">
                   <Github className="w-5 h-5" />
                 </a>

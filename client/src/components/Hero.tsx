@@ -47,7 +47,7 @@ export function Hero() {
             <Button 
               variant="outline" 
               size="lg"
-              className="text-lg h-14 px-8 rounded-full border-white/10 hover:bg-white/5 transition-all"
+              className="text-lg h-14 px-8 rounded-full border-foreground/10 hover:bg-foreground/5 transition-all"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Contact Me
@@ -92,8 +92,8 @@ export function Hero() {
           className="relative hidden md:block"
         >
           <TiltCard maxTilt={10} scale={1.03} glare className="z-10">
-            <div className="bg-card/50 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-2xl">
-              <div className="flex items-center gap-2 mb-4 border-b border-white/10 pb-4">
+            <div className="bg-card/50 backdrop-blur-xl border border-foreground/10 rounded-2xl p-6 shadow-2xl">
+              <div className="flex items-center gap-2 mb-4 border-b border-foreground/10 pb-4">
                 <div className="w-3 h-3 rounded-full bg-red-500" />
                 <div className="w-3 h-3 rounded-full bg-yellow-500" />
                 <div className="w-3 h-3 rounded-full bg-green-500" />

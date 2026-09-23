@@ -14,7 +14,7 @@ function ProjectCard({ project, idx }: { project: Project; idx: number }) {
     >
       <Link href={`/projects/${project.slug}`}>
         <TiltCard maxTilt={7} scale={1.02} glare className="h-full cursor-pointer">
-          <div className="group flex flex-col h-full bg-card rounded-2xl border border-white/5 hover:border-primary/50 transition-colors duration-300 hover:shadow-2xl hover:shadow-primary/10 overflow-hidden">
+          <div className="group flex flex-col h-full bg-card rounded-2xl border border-foreground/5 hover:border-primary/50 transition-colors duration-300 hover:shadow-2xl hover:shadow-primary/10 overflow-hidden">
             <div className="p-6 flex flex-col flex-grow">
               <div className="flex justify-between items-start mb-4">
                 <div className={`w-12 h-12 flex items-center justify-center ${project.logoBgClass || 'bg-secondary'} rounded-xl group-hover:bg-primary/10 group-hover:text-primary transition-colors overflow-hidden`}>
@@ -38,7 +38,7 @@ function ProjectCard({ project, idx }: { project: Project; idx: number }) {
               <div className="space-y-4">
                 <div className="flex flex-wrap gap-2">
                   {project.topics?.slice(0, 2).map(topic => (
-                    <span key={topic} className="text-xs px-2 py-1 rounded-md bg-secondary text-secondary-foreground border border-white/5">
+                    <span key={topic} className="text-xs px-2 py-1 rounded-md bg-secondary text-secondary-foreground border border-foreground/5">
                       {topic}
                     </span>
                   ))}

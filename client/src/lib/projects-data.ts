@@ -42,6 +42,9 @@ export const projects: Project[] = [
     stargazers_count: null,
     language: "TypeScript",
     logo: "/images/syssel.png",
+    // Logo art is a pale peach mark on a transparent background -- pin the
+    // tile to a fixed dark backdrop so it stays legible in light mode too.
+    logoBgClass: "bg-slate-800",
     highlights: [
       "Service provider discovery with location-based search and recommendations",
       "End-to-end booking and appointment management system",

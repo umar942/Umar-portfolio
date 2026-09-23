@@ -106,7 +106,7 @@ export function Contact() {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-card border border-white/5 rounded-2xl p-8 shadow-2xl"
+            className="bg-card border border-foreground/5 rounded-2xl p-8 shadow-2xl"
           >
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -117,7 +117,7 @@ export function Contact() {
                     <FormItem>
                       <FormLabel>Name</FormLabel>
                       <FormControl>
-                        <Input placeholder="John Doe" className="bg-secondary/50 border-white/10 h-12" {...field} />
+                        <Input placeholder="John Doe" className="bg-secondary/50 border-foreground/10 h-12" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -131,7 +131,7 @@ export function Contact() {
                     <FormItem>
                       <FormLabel>Email</FormLabel>
                       <FormControl>
-                        <Input placeholder="john@example.com" className="bg-secondary/50 border-white/10 h-12" {...field} />
+                        <Input placeholder="john@example.com" className="bg-secondary/50 border-foreground/10 h-12" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -147,7 +147,7 @@ export function Contact() {
                       <FormControl>
                         <Textarea 
                           placeholder="Tell me about your project..." 
-                          className="bg-secondary/50 border-white/10 min-h-[150px] resize-none" 
+                          className="bg-secondary/50 border-foreground/10 min-h-[150px] resize-none" 
                           {...field} 
                         />
                       </FormControl>
