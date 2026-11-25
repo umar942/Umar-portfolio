@@ -1,17 +1,60 @@
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowDown, Download, Github, Linkedin, Terminal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TiltCard } from "@/components/TiltCard";
+
+const roles = [
+  "Full-Stack MERN Developer",
+  "React & Next.js Engineer",
+  "Node.js API Builder",
+  "Web3 & AI Integrator",
+];
+
+const codeStack: [string, string[]][] = [
+  ["frontend", ["React.js", "Next.js", "React Native"]],
+  ["backend", ["Node.js", "Express.js", "GraphQL"]],
+  ["database", ["MongoDB", "Redis"]],
+  ["cloud", ["AWS", "Docker"]],
+  ["specialties", ["AI", "Web3", "Socket.io"]],
+];
+
+function RotatingRole() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const id = window.setInterval(() => setIndex((i) => (i + 1) % roles.length), 2600);
+    return () => window.clearInterval(id);
+  }, []);
+
+  return (
+    <span className="relative inline-flex h-[1.4em] overflow-hidden align-bottom">
+      <AnimatePresence mode="wait">
+        <motion.span
+          key={roles[index]}
+          initial={{ y: "100%", opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: "-100%", opacity: 0 }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
+          className="text-foreground font-semibold whitespace-nowrap"
+        >
+          {roles[index]}
+        </motion.span>
+      </AnimatePresence>
+    </span>
+  );
+}
 
 export function Hero() {
   return (
     <section id="about" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background Elements */}
       <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-grid" />
         {/* Lighter background on mobile for better performance */}
-        <div className="hidden sm:block absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-[80px] animate-pulse" />
-        <div className="hidden sm:block absolute bottom-20 right-10 w-96 h-96 bg-blue-600/10 rounded-full blur-[100px]" />
-        <div className="hidden sm:block absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20" />
+        <div className="hidden sm:block absolute -top-20 left-[5%] w-[28rem] h-[28rem] bg-primary/25 rounded-full blur-[110px] animate-aurora" />
+        <div className="hidden sm:block absolute bottom-0 right-[5%] w-[32rem] h-[32rem] bg-violet-600/15 rounded-full blur-[120px] animate-aurora [animation-delay:-6s]" />
+        <div className="hidden sm:block absolute top-1/3 left-1/2 w-72 h-72 bg-blue-500/10 rounded-full blur-[100px] animate-aurora [animation-delay:-12s]" />
       </div>
 
       <div className="container relative z-10 px-6 mx-auto grid md:grid-cols-2 gap-12 items-center">
@@ -29,11 +72,14 @@ export function Hero() {
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold font-display mb-6 leading-tight">
-            Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">Umar Ali</span>
+            Hi, I'm <span className="text-gradient">Umar Ali</span>
           </h1>
-          
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-lg leading-relaxed">
-            A passionate <span className="text-foreground font-semibold">Full-Stack MERN Developer</span> crafting robust and scalable web applications.
+
+          <p className="text-xl md:text-2xl text-muted-foreground mb-2 max-w-lg leading-relaxed">
+            <RotatingRole />
+          </p>
+          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-lg leading-relaxed">
+            Crafting robust, scalable web & mobile products from database to interface.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
@@ -73,8 +119,8 @@ export function Hero() {
                 <Linkedin className="w-6 h-6" />
               </a>
               <a
-                href="/Umar-Ali-Resume.pdf"
-                download="Umar-Ali-Resume.pdf"
+                href="/UMAR-ALI-Resume.pdf"
+                download="UMAR-ALI-Resume.pdf"
                 className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
               >
                 <Download className="w-4 h-4" />
@@ -99,26 +145,22 @@ export function Hero() {
                 <div className="w-3 h-3 rounded-full bg-green-500" />
                 <span className="ml-2 text-xs text-muted-foreground font-mono">developer.tsx</span>
               </div>
-              <div className="font-mono text-sm leading-relaxed">
+              <div className="font-mono text-[13px] leading-relaxed">
                 <div className="text-pink-400">const <span className="text-blue-400">developer</span> = <span className="text-yellow-400">{"{"}</span></div>
                 <div className="pl-4 text-foreground">name: <span className="text-green-400">"Umar Ali"</span>,</div>
                 <div className="pl-4 text-foreground">role: <span className="text-green-400">"Full-Stack Developer"</span>,</div>
-                <div className="pl-4 text-foreground">frontend: <span className="text-yellow-400">{"["}</span></div>
-                <div className="pl-8 text-green-400">"React.js", "Next.js", "React Native"</div>
-                <div className="pl-4 text-yellow-400">{"],"}</div>
-                <div className="pl-4 text-foreground">backend: <span className="text-yellow-400">{"["}</span></div>
-                <div className="pl-8 text-green-400">"Node.js", "Express.js", "GraphQL"</div>
-                <div className="pl-4 text-yellow-400">{"],"}</div>
-                <div className="pl-4 text-foreground">database: <span className="text-yellow-400">{"["}</span></div>
-                <div className="pl-8 text-green-400">"MongoDB", "Redis"</div>
-                <div className="pl-4 text-yellow-400">{"],"}</div>
-                <div className="pl-4 text-foreground">cloud: <span className="text-yellow-400">{"["}</span></div>
-                <div className="pl-8 text-green-400">"AWS", "Docker"</div>
-                <div className="pl-4 text-yellow-400">{"],"}</div>
-                <div className="pl-4 text-foreground">specialties: <span className="text-yellow-400">{"["}</span></div>
-                <div className="pl-8 text-green-400">"AI", "Web3", "Socket.io"</div>
-                <div className="pl-4 text-yellow-400">{"]"}</div>
-                <div className="text-yellow-400">{"}"}</div>
+                {/* Arrays render on one line; long ones wrap with a hanging indent */}
+                {codeStack.map(([key, values]) => (
+                  <div key={key} className="pl-8 -indent-4 text-foreground">
+                    {key}: <span className="text-yellow-400">[</span>
+                    <span className="text-green-400">{values.map((v) => `"${v}"`).join(", ")}</span>
+                    <span className="text-yellow-400">]</span>,
+                  </div>
+                ))}
+                <div className="text-yellow-400">
+                  {"};"}
+                  <span className="inline-block w-2 h-4 ml-1 align-middle bg-primary animate-pulse" />
+                </div>
               </div>
             </div>
           </TiltCard>

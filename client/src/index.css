@@ -110,3 +110,88 @@
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--primary));
 }
+
+/* ---------- Modern UI utilities ---------- */
+@layer utilities {
+  .text-gradient {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-primary via-blue-400 to-violet-500;
+  }
+
+  .section-eyebrow {
+    @apply inline-flex items-center gap-2 mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-primary;
+  }
+  .section-eyebrow::before {
+    content: "";
+    @apply inline-block w-6 h-px bg-primary;
+  }
+
+  .kbd {
+    @apply inline-flex items-center justify-center min-w-[1.5rem] h-6 px-1.5 rounded-md border border-foreground/15 bg-secondary text-[11px] font-mono font-medium text-foreground/80;
+  }
+
+  /* Faint engineering grid that fades out toward the edges */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, hsl(var(--foreground) / 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--foreground) / 0.06) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 100%);
+  }
+
+  .marquee-mask {
+    mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+  }
+  .animate-marquee {
+    animation: marquee 40s linear infinite;
+  }
+  .group:hover .animate-marquee {
+    animation-play-state: paused;
+  }
+
+  .animate-aurora {
+    animation: aurora 18s ease-in-out infinite alternate;
+  }
+}
+
+/* Cursor-following glow + border highlight for SpotlightCard */
+.spotlight-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  background: radial-gradient(420px circle at var(--spot-x, 50%) var(--spot-y, 50%), hsl(var(--primary) / 0.12), transparent 40%);
+  z-index: 1;
+}
+.spotlight-card:hover::before {
+  opacity: 1;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+@keyframes aurora {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(6%, -4%) scale(1.1); }
+  100% { transform: translate(-4%, 5%) scale(0.95); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee, .animate-aurora { animation: none; }
+}
+
+/* Pulse travelling along the MERN pipeline connector */
+.animate-pipeline {
+  animation: pipeline 2.8s ease-in-out infinite;
+}
+@keyframes pipeline {
+  from { left: -25%; }
+  to { left: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-pipeline { animation: none; }
+}

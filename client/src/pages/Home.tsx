@@ -4,6 +4,8 @@ import { Skills } from "@/components/Skills";
 import { Projects } from "@/components/Projects";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import { TechMarquee } from "@/components/TechMarquee";
+import { AtAGlance } from "@/components/AtAGlance";
 
 export default function Home() {
   return (
@@ -11,6 +13,8 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <TechMarquee />
+        <AtAGlance />
         <Skills />
         <Projects />
         <Contact />

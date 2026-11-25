@@ -45,7 +45,7 @@ import type { IconType } from "react-icons";
 
 type SkillIcon = IconType | LucideIcon;
 
-const skillMeta: Record<string, { icon: SkillIcon; color?: string }> = {
+export const skillMeta: Record<string, { icon: SkillIcon; color?: string }> = {
   "HTML5": { icon: SiHtml5, color: "#E34F26" },
   "CSS3": { icon: SiCss3, color: "#1572B6" },
   "JavaScript": { icon: SiJavascript, color: "#F7DF1E" },
@@ -85,7 +85,7 @@ const skillMeta: Record<string, { icon: SkillIcon; color?: string }> = {
   "Responsive Design": { icon: Smartphone, color: "#22D3EE" },
 };
 
-const skillsData = [
+export const skillsData = [
  {
   category: "Frontend",
   icon: <Layout className="w-6 h-6 text-blue-400" />,
@@ -153,13 +153,14 @@ export function Skills() {
     <section id="skills" className="py-24 relative bg-secondary/20">
       <div className="container px-6 mx-auto">
         <div className="text-center mb-16">
+          <p className="section-eyebrow">Tech stack</p>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-3xl md:text-4xl font-bold font-display mb-4"
           >
-            Technical <span className="text-primary">Arsenal</span>
+            Technical <span className="text-gradient">Arsenal</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}

@@ -3,6 +3,7 @@ import { Github, ArrowUpRight } from "lucide-react";
 import { Link } from "wouter";
 import { projects, type Project } from "@/lib/projects-data";
 import { TiltCard } from "@/components/TiltCard";
+import { SpotlightCard } from "@/components/SpotlightCard";
 
 function ProjectCard({ project, idx }: { project: Project; idx: number }) {
   return (
@@ -14,7 +15,7 @@ function ProjectCard({ project, idx }: { project: Project; idx: number }) {
     >
       <Link href={`/projects/${project.slug}`}>
         <TiltCard maxTilt={7} scale={1.02} glare className="h-full cursor-pointer">
-          <div className="group flex flex-col h-full bg-card rounded-2xl border border-foreground/5 hover:border-primary/50 transition-colors duration-300 hover:shadow-2xl hover:shadow-primary/10 overflow-hidden">
+          <SpotlightCard className="group flex flex-col h-full bg-card rounded-2xl border border-foreground/5 hover:border-primary/50 transition-colors duration-300 hover:shadow-2xl hover:shadow-primary/10 overflow-hidden">
             <div className="p-6 flex flex-col flex-grow">
               <div className="flex justify-between items-start mb-4">
                 <div className={`w-12 h-12 flex items-center justify-center ${project.logoBgClass || 'bg-secondary'} rounded-xl group-hover:bg-primary/10 group-hover:text-primary transition-colors overflow-hidden`}>
@@ -45,7 +46,7 @@ function ProjectCard({ project, idx }: { project: Project; idx: number }) {
                 </div>
               </div>
             </div>
-          </div>
+          </SpotlightCard>
         </TiltCard>
       </Link>
     </motion.div>
@@ -62,8 +63,9 @@ export function Projects() {
       <div className="container px-6 mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
           <div>
+            <p className="section-eyebrow">Selected work</p>
             <h2 className="text-3xl md:text-4xl font-bold font-display mb-4">
-              Featured <span className="text-primary">Projects</span>
+              Featured <span className="text-gradient">Projects</span>
             </h2>
             <p className="text-muted-foreground max-w-xl">
               Check out my latest open source contributions and personal projects.
